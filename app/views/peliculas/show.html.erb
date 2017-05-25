@@ -1,0 +1,13 @@
+<h1><%= @pelicula.name %></h1>
+
+<div class="peliculas">
+
+	<p>Nombre: <%= @pelicula.name %></p>
+	<p>Estrellas: <%= @pelicula.stars %></p>
+	<p>Protagonizada por <%= @pelicula.main_actor %></p>
+	<p>Año:<%= @pelicula.year %></p>
+</div>
+
+<button class="boton"><%= link_to "Editar Pelicula", edit_pelicula_path %></button> 
+<button class="boton"><%= link_to 'Borrar', pelicula_path(@pelicula), :method => :delete %></button>
+
