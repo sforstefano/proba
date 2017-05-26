@@ -168,7 +168,7 @@ DEPENDENCIES
   byebug
   coffee-rails (~> 4.2)
   coffee-script-source (= 1.8.0)
-  devise
+  devise (~> 4.3)
   font-awesome-rails
   jbuilder (~> 2.5)
   jquery-rails
