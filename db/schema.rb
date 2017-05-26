@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170526084329) do
+ActiveRecord::Schema.define(version: 20170526102949) do
 
   create_table "comentarios", force: :cascade do |t|
     t.text     "coment"
@@ -25,6 +25,17 @@ ActiveRecord::Schema.define(version: 20170526084329) do
     t.integer  "year"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "top_movies", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "stars"
+    t.string   "name"
+    t.integer  "year"
+    t.integer  "ranking"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_top_movies_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
