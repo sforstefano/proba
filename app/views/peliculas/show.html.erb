@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="stylesheets/peliculas.css.scss">
 <h1><%= @pelicula.name %></h1>
 
 <div class="peliculas">
@@ -8,6 +9,5 @@
 	<p>Año:<%= @pelicula.year %></p>
 </div>
 
-<button class="boton"><%= link_to "Editar Pelicula", edit_pelicula_path %></button> 
-<button class="boton"><%= link_to 'Borrar', pelicula_path(@pelicula), :method => :delete %></button>
-
+<button class="boton4"><%= link_to "Editar Pelicula", edit_pelicula_path %></button>
+<button class="boton4"><%= link_to 'Borrar', pelicula_path(@pelicula), :method => :delete %></button>
