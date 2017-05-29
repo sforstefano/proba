@@ -1,33 +1,43 @@
 <link rel="stylesheet" type="text/css" href="stylesheet/peliculas.css.scss">
+
+<% if user_session %>
 <nav class="navbar navbar-default">
-    <ul class="nav navbar-nav">
-        <li><%= link_to "Nueva peli", new_pelicula_path %></li>
-    </ul>
-    <ul class="nav navbar-nav navbar-right">
-    	<li><%=link_to "Entrar", new_user_session_path %></li>
-    	<li class="clas"> <%=link_to "Registrate", new_user_registration_path %></li>
-    </ul>
+	<ul class="nav navbar-nav">
+		<li><%= link_to "Añadir pelicula", new_pelicula_path %></li>
+	</ul>
 </nav>
+<% else %>
+<nav class="navbar navbar-default">
+	<ul class="nav navbar-nav">
+		<li><%= link_to "Añadir pelicula", new_pelicula_path %></li>
+	</ul>
+	<ul class="nav navbar-nav navbar-right">
+		<li><%=link_to "Entrar", new_user_session_path %></li>
+		<li class="clas"> <%=link_to "Registrate", new_user_registration_path %></li>
+	</ul>
+</nav>
+
+<% end %>
 <h1 class="title">Movie Time</h1>
 
 <br/>
 
 <div class="peliculas">
 
-<% @peliculas.each do |peli| %>
+	<% @peliculas.each do |peli| %>
 
 	<p><%= link_to peli.name, peli %></p>
 	<p><%= peli.stars %></p>
 	<p><%= peli.main_actor %></p>
 	<p><%= peli.year %></p>
 
-<br/>
-<br/>
+	<br/>
+	<br/>
 
-<% end %>
+	<% end %>
 
-<br/>
-<br/>
+	<br/>
+	<br/>
 
 </div>
 
