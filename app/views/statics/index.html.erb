@@ -1,5 +1,8 @@
 <link rel="stylesheet" type="text/css" href="stylesheet/statics.css.scss">
-
-<button class="boton"> <%= link_to "Nosotros", about_path %></button><br/><br/>
-<button class="boton"> <%=link_to "Login", new_user_session_path %></button><br/><br/>
-<button class="boton"> <%=link_to "Sign up", new_user_registration_path %></button><br/><br/>
+<nav class="navbar navbar-default">
+    <ul class="nav navbar-nav">
+      <li><%=link_to "Entrar", new_user_session_path %></li>
+      <li> <%=link_to "Registrate", new_user_registration_path %></li>
+      <li><%= link_to "Nosotros", about_path %></li>
+    </ul>
+</nav>
