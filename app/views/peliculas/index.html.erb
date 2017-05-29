@@ -1,9 +1,11 @@
 <link rel="stylesheet" type="text/css" href="stylesheet/peliculas.css.scss">
 <nav class="navbar navbar-default">
     <ul class="nav navbar-nav">
-      <li><%=link_to "Entrar", new_user_session_path %></li>
-      <li> <%=link_to "Registrate", new_user_registration_path %></li>
-      <li><%= link_to "Nosotros", about_path %></li>
+        <li><%= link_to "Nueva peli", new_pelicula_path %></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+    	<li><%=link_to "Entrar", new_user_session_path %></li>
+    	<li> <%=link_to "Registrate", new_user_registration_path %></li>
     </ul>
 </nav>
 <h1 class="title">Movie Time</h1>
@@ -29,4 +31,3 @@
 
 </div>
 
-<button class="boton3"><%= link_to "Nueva peli", new_pelicula_path %> </button > 
