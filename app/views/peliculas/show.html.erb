@@ -7,12 +7,13 @@
 	<p>Estrellas: <%= @pelicula.stars %></p>
 	<p>Protagonizada por <%= @pelicula.main_actor %></p>
 	<p>Año:<%= @pelicula.year %></p>
+	<p><%= @pelicula.poster %></p>
 </div>
+
 
 <% if user_signed_in? %>
 <button class="boton4"><%= link_to "Editar Pelicula", edit_pelicula_path %></button>
 <button class="boton4"><%= link_to 'Borrar', pelicula_path(@pelicula), :method => :delete %></button>
 <% end %>
 
-<%= render 'comentarios/form' %>
 
