@@ -10,12 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170526110905) do
+ActiveRecord::Schema.define(version: 20170530083212) do
 
   create_table "comentarios", force: :cascade do |t|
     t.text     "coment"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+    t.integer  "peliculas_id"
+    t.index ["peliculas_id"], name: "index_comentarios_on_peliculas_id"
   end
 
   create_table "countries", force: :cascade do |t|

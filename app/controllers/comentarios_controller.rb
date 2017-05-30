@@ -1,14 +1,14 @@
 class ComentariosController < ApplicationController
 	def index
-		@comentario = Comementario.all
+		@comentario = Comentarios.all
 	end
 
 	def new
-		@comentario = Comentario.new
+		@comentario = Comentarios.new
 	end
 
 	def create
-		@comentario = Comentario.new(comParams)
+		@comentario = Comentarios.new(comParams)
 		if @comentario.save
 			flash[:success] = "Comentario añadido."
 			redirect_to pelicula_path(@comentarios)
@@ -19,6 +19,6 @@ class ComentariosController < ApplicationController
 
 	private
 		def comParams
-			params.require(:comentario).pemrit(:coment)
+			params.require(:comentarios).pemrit(:coment)
 		end
 end
