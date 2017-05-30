@@ -1,24 +1,38 @@
 class ComentariosController < ApplicationController
 	def index
-		@comentario = Comentarios.all
+		@comentarios = Comentario.all
+	end
+
+	def show
+		@comentario = Comentario.find(params[:id])
 	end
 
 	def new
-		@comentario = Comentarios.new
+		@comentario = Comentario.new
+	end
+
+	def edit
+		@comentario = Comentario.find(params[:id])
 	end
 
 	def create
-		@comentario = Comentarios.new(comParams)
+		@comentario = Comentario.new(comParams)
 		if @comentario.save
 			flash[:success] = "Comentario añadido."
-			redirect_to pelicula_path(@comentarios)
+			redirect_to @comentario
 		else
 			render 'new'
 		end
 	end
 
+	def update
+		@comentario = Comentario.find(params[:id])
+		@comentario.destroy
+		redirect_to comentarios_path
+	end
+
 	private
 		def comParams
-			params.require(:comentarios).pemrit(:coment)
+			params.require(:comentario).pemrit(:coment)
 		end
 end
