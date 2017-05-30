@@ -14,18 +14,5 @@
 <button class="boton4"><%= link_to 'Borrar', pelicula_path(@pelicula), :method => :delete %></button>
 <% end %>
 
-
-<p><%= @comentario.coment %></p>
-
-
-<%= form_for @comentario do |comentt| %>
-	<p>
-		<%= comentt.label :coment %>
-		<%= comentt.text_field :coment %>
-	</p>
-<%= comentt.submit "Comentar" %>
-
-
-<% end %>
-
+<%= render 'comentarios/form' %>
 
