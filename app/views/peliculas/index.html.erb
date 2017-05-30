@@ -12,6 +12,9 @@
 </nav>
 <% else %>
 <nav class="navbar navbar-default">
+	<ul class="nav navbar-nav">
+		<li><%= link_to "About", about_path %></li>
+	</ul>
 	<ul class="nav navbar-nav navbar-right">
 		<li><%=link_to "Entrar", new_user_session_path %></li>
 		<li class="clas"> <%=link_to "Registrate", new_user_registration_path %></li>
