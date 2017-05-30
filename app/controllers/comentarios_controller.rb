@@ -11,28 +11,38 @@ class ComentariosController < ApplicationController
 		@comentario = Comentario.new
 	end
 
-	def edit
-		@comentario = Comentario.find(params[:id])
-	end
-
 	def create
-		@comentario = Comentario.new(comParams)
+		@comentario = Comentario.new(com_params)
 		if @comentario.save
-			flash[:success] = "Comentario añadido."
-			redirect_to @comentario
+			redirect_to comentarios_path, :notice => "Coolllll"
 		else
 			render 'new'
 		end
 	end
 
-	def update
+	def edit
 		@comentario = Comentario.find(params[:id])
-		@comentario.destroy
-		redirect_to comentarios_path
 	end
 
+	def update
+		@comentario = Comentario.find(params[:id])
+		if @comentario.update_attributes(com_params)
+			redirect_to comentarios_path
+		else
+			render "edit"
+		end		
+	end
+
+	def destroy
+		@comentario = Comentario.find(params[:id])
+		@comentario.destroy
+		redirect_to peliculas_path
+	end
+
+
+
 	private
-		def comParams
-			params.require(:comentario).pemrit(:coment)
+		def com_params
+			params.require(:comentario).permit(:coment)
 		end
 end

@@ -1,3 +1,3 @@
 class Comentario < ApplicationRecord
-	belongs_to :pelicula
+	#belongs_to :pelicula
 end

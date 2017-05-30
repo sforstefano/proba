@@ -8,6 +8,7 @@ get '/about' => 'statics#about', :as => 'about'
   #get 'statics/about'
 
 resources :peliculas
+resources :comentarios
 
 
 
