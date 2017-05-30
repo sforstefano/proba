@@ -1,6 +1,6 @@
 class ComentariosController < ApplicationController
 	def index
-		@comentarios = Comementario.all
+		@comentario = Comementario.all
 	end
 
 	def new
