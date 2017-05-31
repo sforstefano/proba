@@ -1,7 +1,7 @@
 
 <h2>Añade aquí una nueva película</h2>
 
-<%= form_for @pelicula do |futbol| %>
+<%= form_for @pelicula, html: { multipart: true } do |futbol| %>
 
 <p>
 	<%= futbol.label :name %> <br/>
@@ -29,9 +29,10 @@
 </p>
 
 <p>
-	<%= futbol.label :trailer %>
-	<%= futbol.text_field :trailer %>
+	<%= futbol.label :poster %>
+	<%= futbol.file_field :poster %>
 </p>
+
 
 <%= futbol.submit "Añadir peli" %>
 

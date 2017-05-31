@@ -8,7 +8,6 @@ Rails.application.configure do
 
   # Do not eager load code on boot.
   config.eager_load = false
-  Paperclip.options[:command_path] = "C:\Program Files\ImageMagick-7.0.5-Q16"
   # Show full error reports.
   config.consider_all_requests_local = true
 
@@ -62,5 +61,7 @@ Rails.application.configure do
     password: ENV["MAILER_PASSWORD"]
   }
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+
+  Paperclip.options[:command_path] = 'C:\Program Files\ImageMagick-7.0.5-Q16'
 
 end
