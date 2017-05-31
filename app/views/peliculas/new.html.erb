@@ -1,40 +1,36 @@
-
-<h2>Añade aquí una nueva película</h2>
-
+<link rel="stylesheet" type="text/css" href="stylesheet/peliculas.css.scss">
 <%= form_for @pelicula, html: { multipart: true } do |futbol| %>
-
-<p>
-	<%= futbol.label :name %> <br/>
-	<%= futbol.text_field :name %>
-</p>
-
-<p>
-	<%= futbol.label :stars %> <br/>
-	<%= futbol.text_field :stars %>
-</p>
-
-<p>
-	<%= futbol.label :main_actor %> <br/>
-	<%= futbol.text_field :main_actor %>
-</p>
-
-<p>
-	<%= futbol.label :year %> <br/>
-	<%= futbol.text_field :year %>
-</p>
-
-<p>
-	<%= futbol.label :description %> <br/>
-	<%= futbol.text_field :description %>
-</p>
-
-<p>
-	<%= futbol.label :poster %>
-	<%= futbol.file_field :poster %>
-</p>
-
-
-<%= futbol.submit "Añadir peli" %>
-
-<% end %>
-
+<div class="row">
+		<p class="logg"><%= futbol.submit "Añadir" %></p>
+		<p class="logg"> <%=link_to "Inicio", root_path %></p>
+	<div class="col-lg-12">
+		<div class="head">
+			<img class="imagen" src="http://res.cloudinary.com/se-or/image/upload/v1496246942/fondo_ua1eam.jpg">
+			<% if user_signed_in? %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="crear">
+					<p>Tiutulo</p>
+					<p><%= futbol.text_field :name  %></p>
+					<br/>
+					<p>Puntuación:</p>
+					<p><%= futbol.text_field :stars %></p>
+					<br/>
+					<p>Actor principal</p>
+					<p><%= futbol.text_field :main_actor %></p>
+					<br/>
+					<p>Año</p>
+					<p><%= futbol.text_field :year %></p>
+					<br/>
+					<p>Sinposis</p>
+					<p><%= futbol.text_field :description, :class => "desc"%></p>
+					<br/>
+					<p>Poster</p>
+					<p><%= futbol.file_field :poster %></p>
+					<br/>
+		<% end %>
+	</div>
+</div>

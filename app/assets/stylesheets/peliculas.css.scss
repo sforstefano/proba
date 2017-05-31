@@ -137,16 +137,14 @@
 }
 
 input[type=submit] {
-background: white;
+	background: white;
+	color: black;
+	border-style: none;
+	border-color: white;
+	text-shadow:none;
+	font-size: 100%;
+}
 
-color: black;
-
-border-style: none;
-
-border-color: white;
-
-text-shadow:none;
-
-font-size: 100%;
-
+.crear{
+	margin-left: 15%;
 }
