@@ -1,11 +1,27 @@
 <link rel="stylesheet" type="text/css" href="stylesheet/peliculas.css.scss">
 <div class="row">
+	<% if user_signed_in? %>
+		<p class="logg" ><%= link_to "Añadir pelicula", new_pelicula_path %></p>
+		<p class="logg"> <%=link_to "Editar usuario",  edit_user_registration_path %></p>
+		<p class="logg"> <%=link_to "Salir", destroy_user_session_path, :method => :delete %></p>
+	<% else %>
+		<p class="logg" ><%=link_to "Entrar", new_user_session_path %></p>
+		<p class="logg"><%=link_to "Registrate", new_user_registration_path %></p>
+		<p class="logg"><%= link_to "Nosotros", about_path %></p>
+	<% end %>
 	<div class="col-lg-12">
 		<div class="head">
-			<img src="http://res.cloudinary.com/se-or/image/upload/v1496246942/fondo_ua1eam.jpg">
+			<img class="imagen" src="http://res.cloudinary.com/se-or/image/upload/v1496246942/fondo_ua1eam.jpg">
+			<% if user_signed_in? %>
+			<% end %>
 		</div>
 	</div>
 </div>
+
+
+
+
+
 <br/>
 <div class="row">
 	<div class="col-lg-4">
