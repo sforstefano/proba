@@ -1,20 +1,43 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/peliculas.css.scss">
-<h1><%= @pelicula.name %></h1>
-
-<div class="peliculas">
-
-	<p>Nombre: <%= @pelicula.name %></p>
-	<p>Estrellas: <%= @pelicula.stars %></p>
-	<p>Protagonizada por <%= @pelicula.main_actor %></p>
-	<p>Año:<%= @pelicula.year %></p>
-	<p class="description">Des: <%= @pelicula.description %></p>
-	<%= image_tag @pelicula.poster.url(:medium) %>
+<div class="row">
+	<% if user_signed_in? %>
+		<p class="logg" ><%= link_to "Editar Pelicula", edit_pelicula_path %></p>
+		<p class="logg"><%= link_to 'Borrar pelicula', pelicula_path(@pelicula), :method => :delete %></p>
+		<p class="logg"> <%=link_to "Inicio", root_path %></p>
+	<% else %>
+		<p class="logg" ><%=link_to "Entrar", new_user_session_path %></p>
+		<p class="logg"><%=link_to "Registrate", new_user_registration_path %></p>
+		<p class="logg"><%= link_to "Nosotros", about_path %></p>
+	<% end %>
+	<div class="col-lg-12">
+		<div class="head">
+			<img class="imagen" src="http://res.cloudinary.com/se-or/image/upload/v1496246942/fondo_ua1eam.jpg">
+			<% if user_signed_in? %>
+			<% end %>
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="show">
+		<div class="col-lg-6">
+			<div class="showPeli">
+				<h1><%= @pelicula.name %></h1>
+				<br/>
+				<p>Estrellas: <%= @pelicula.stars %></p>
+				<br/>
+				<p>Protagonizada por <%= @pelicula.main_actor %></p>
+				<br/>
+				<p><%= @pelicula.year %></p>
+				<br/>
+				<p><%= @pelicula.description %></p>
+				<br/>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<%= image_tag @pelicula.poster.url(:medium) %>
+		</div>
+	</div>
 </div>
 
-
-<% if user_signed_in? %>
-<button class="boton4"><%= link_to "Editar Pelicula", edit_pelicula_path %></button>
-<button class="boton4"><%= link_to 'Borrar', pelicula_path(@pelicula), :method => :delete %></button>
-<% end %>
 
 

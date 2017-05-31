@@ -5,10 +5,13 @@
 <br/>
 <br/>
  
-<p>Nombre: <br/><%= pelic.text_field :name%><br/></p>
-<p>Estrellas: <br/><%= pelic.text_field :stars%><br/></p>
-<p>Actor principal: <br/><%= pelic.text_field :main_actor%><br/></p>
-<p>Año: <br/><%= pelic.text_field :year%><br/></p>
+<p>Nombre: <br/><%= pelic.text_field :name %><br/></p>
+<p>Estrellas: <br/><%= pelic.text_field :stars %><br/></p>
+<p>Actor principal: <br/><%= pelic.text_field :main_actor %><br/></p>
+<p>Año: <br/><%= pelic.text_field :year %><br/></p>
+<p>Descripción: <br/><%= pelic.text_field :description %> <br/> </p>
+<p>Poster: <br/><%= pelic.file_field :poster %><br/></p>
+<p>Poster actual: <br/><%= image_tag @pelicula.poster.url(:medium) %></p>
 
 </div>
 

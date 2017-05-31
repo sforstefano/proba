@@ -19,7 +19,7 @@ before_action :authenticate_user!, except: [:index, :show]
       @pelicula = Pelicula.new(pelicula_params)
       #no tiene vista, procesa la pelicula
       if @pelicula.save
-         redirect_to peliculas_path, :notice => "Se ha guardado la peli"
+         redirect_to root_path, :notice => "Se ha guardado la peli"
       else
          render "new"
       end
@@ -35,7 +35,7 @@ before_action :authenticate_user!, except: [:index, :show]
       @pelicula = Pelicula.find(params[:id])
     
       if @pelicula.update_attributes(pelicula_params)
-         redirect_to peliculas_path, :notice => "éxito!"
+         redirect_to root_path, :notice => "éxito!"
       else
        render "edit"
       end
@@ -45,7 +45,7 @@ before_action :authenticate_user!, except: [:index, :show]
    def destroy
       @pelicula = Pelicula.find(params[:id])
       @pelicula.destroy
-      redirect_to peliculas_path, :notice => "Eliminado"
+      redirect_to root_path, :notice => "Eliminado"
 
       #render "index"
    end
