@@ -1,24 +1,63 @@
-<div class="peliculas"> 
-
 <%= form_for @pelicula do |pelic|%>
-
-<br/>
-<br/>
- 
-<p>Nombre: <br/><%= pelic.text_field :name %><br/></p>
-<p>Estrellas: <br/><%= pelic.text_field :stars %><br/></p>
-<p>Actor principal: <br/><%= pelic.text_field :main_actor %><br/></p>
-<p>Año: <br/><%= pelic.text_field :year %><br/></p>
-<p>Descripción: <br/><%= pelic.text_field :description %> <br/> </p>
-<p>Poster: <br/><%= pelic.file_field :poster %><br/></p>
-<p>Poster actual: <br/><%= image_tag @pelicula.poster.url(:medium) %></p>
-
+<div class="row">
+		<p class="logg"><%= pelic.submit "Guardar pelicula" %></p>
+		<p class="logg"><%= link_to 'Borrar pelicula', pelicula_path(@pelicula), :method => :delete %></p>
+		<p class="logg"> <%=link_to "Inicio", root_path %></p>
+	<div class="col-lg-12">
+		<div class="head">
+			<img class="imagen" src="http://res.cloudinary.com/se-or/image/upload/v1496246942/fondo_ua1eam.jpg">
+			<% if user_signed_in? %>
+			<% end %>
+		</div>
+	</div>
 </div>
 
-
- 
-<%= pelic.submit "enviar peli" %>
-
-
- 
-<%end%>
+<div class="container">
+		<div class="col-lg-6">
+			<div class="editar"> 
+				
+				<br/>
+				<br/>
+					<p>Tiutulo</p>
+					<p><%= pelic.text_field :name  %></p>
+					<br/>
+					<p>Puntuación:</p>
+					<p><%= pelic.text_field :stars %></p>
+					<br/>
+					<p>Actor principal</p>
+					<p><%= pelic.text_field :main_actor %></p>
+					<br/>
+					<p>Año</p>
+					<p><%= pelic.text_field :year %></p>
+					<br/>
+					<p>Sinposis</p>
+					<p><%= pelic.text_field :description %></p>
+					<br/>
+					<p>Poster</p>
+					<p><%= pelic.file_field :poster %></p>
+					<br/>		 
+				<%end%>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			<h3>Actual</h3>
+			<br/>
+				<div class="col-lg-6">
+					<div class="currentPeli">
+						<p><%= @pelicula.name %></p>
+						<br/>
+						<p>Estrellas: <%= @pelicula.stars %></p>
+						<br/>
+						<p>Protagonizada por <%= @pelicula.main_actor %></p>
+						<br/>
+						<p><%= @pelicula.year %></p>
+						<br/>
+						<p><%= @pelicula.description %></p>
+						<br/>
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<%= image_tag @pelicula.poster.url(:medium) %>
+				</div>
+		</div>
+</div>
