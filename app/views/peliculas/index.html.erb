@@ -2,7 +2,6 @@
 <div class="row">
 	<% if user_signed_in? %>
 		<p class="logg" ><%= link_to "Añadir pelicula", new_pelicula_path %></p>
-		<p class="logg"> <%=link_to "Editar usuario",  edit_user_registration_path %></p>
 		<p class="logg"> <%=link_to "Salir", destroy_user_session_path, :method => :delete %></p>
 	<% else %>
 		<p class="logg" ><%=link_to "Entrar", new_user_session_path %></p>

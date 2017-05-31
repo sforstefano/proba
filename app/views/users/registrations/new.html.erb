@@ -1,33 +1,38 @@
 
-
-
-
-<h2>Sign up</h2>
-
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= devise_error_messages! %>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<div class="row">
+    <p class="logg"><%= link_to "Inicio", root_path %> </p>
+    <p class="logg"><%= f.submit "Registrarse" %></p>
+    <p class="logg"><%= link_to "Nosotros", about_path %></p>
+  <div class="col-lg-12">
+    <div class="head">
+      <img class="imagen" src="http://res.cloudinary.com/se-or/image/upload/v1496246942/fondo_ua1eam.jpg">
+    </div>
   </div>
+</div>
+<div class="container">
+  <h2>Registro</h2>
+  <br/>
+    <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
+    <div class="field">
+      <p>Email</p>
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+    <br/>
+    <div class="field">
+      <p>Contraseña</p>
+      <% if @minimum_password_length %>
+      <em>(<%= @minimum_password_length %> characters minimum)</em>
+      <% end %><br />
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+    <br/>
+    <div class="field">
+      <p>Confirmar contraseña</p>
+      <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
+  <% end %>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

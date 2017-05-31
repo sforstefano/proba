@@ -1,26 +1,35 @@
-<h2>Log in</h2>
-
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
-
-  <% if devise_mapping.rememberable? -%>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+<div class="row">
+    <p class="logg"><%= f.submit "Entrar" %></p>
+    <p class="logg"><%= link_to "Inicio", root_path %> </p>
+  <div class="col-lg-12">
+    <div class="head">
+      <img class="imagen" src="http://res.cloudinary.com/se-or/image/upload/v1496246942/fondo_ua1eam.jpg">
     </div>
-  <% end -%>
-
-  <div class="actions">
-    <%= f.submit "Log in" %>
   </div>
-<% end %>
+</div>
+<div class="container">
 
-<%= render "users/shared/links" %>
+
+    <div class="field">
+      <p>Email</p>
+      <%= f.email_field :email, autofocus: true %>
+    </div>
+    <br/>
+    <div class="field">
+      <p>Contraseña</p>
+      <%= f.password_field :password, autocomplete: "off" %>
+    </div>
+    <br/>
+    <% if devise_mapping.rememberable? -%>
+      <div class="field">
+        <%= f.check_box :remember_me %>
+        <%= f.label "Recordarte" %>
+      </div>
+    <% end -%>
+
+    <div class="actions">
+
+    </div>
+  <% end %>
+</div>
