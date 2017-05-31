@@ -24,19 +24,27 @@
 <h1 class="title">Movie Time</h1>
 
 <br/>
-<div class="row">
-<div class="col-lg-3">
+<div class="2017">
+<h4 class="year">2017</h4>
 <div class="peliculas">
 
+
 	<% @peliculas.each do |peli| %>
-
-	<h3><%= link_to peli.name, peli %></h3>
-
+	<h5 class="titulo"><%= link_to peli.name, peli %></h5>
 	<% end %>
-
-	<br/>
 	<br/>
 </div>
+</div>
+<br/>
+<div class="2016">
+<h4 class="year">2016</h4>
+<div class="peliculas">
+
+
+	<% @peliculas.each do |peli| %>
+	<h5 class="titulo"><%= link_to peli.name, peli %></h5>
+	<% end %>
+	<br/>
 </div>
 </div>
 
