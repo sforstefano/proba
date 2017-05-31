@@ -1,50 +1,66 @@
 <link rel="stylesheet" type="text/css" href="stylesheet/peliculas.css.scss">
+<div class="head">
+	<% if user_signed_in? %>
+		<nav class="navbar navbar-default">
+			<ul class="nav navbar-nav">
+				<li><%= link_to "Añadir pelicula", new_pelicula_path %></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="clas"> <%=link_to "Editar usuario",  edit_user_registration_path %></li>
+				<li class="clas"> <%=link_to "Salir", destroy_user_session_path, :method => :delete %></li>
+			</ul>
+		</nav>
+	<% else %>
+		<nav class="navbar navbar-default">
+			<ul class="nav navbar-nav">
+				<li><%= link_to "Nosotros", about_path %></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li><%=link_to "Entrar", new_user_session_path %></li>
+				<li class="clas"> <%=link_to "Registrate", new_user_registration_path %></li>
+			</ul>
+		</nav>
+	<% end %>
+</div>
 
-<% if user_signed_in? %>
-<nav class="navbar navbar-default">
-	<ul class="nav navbar-nav">
-		<li><%= link_to "Añadir pelicula", new_pelicula_path %></li>
-	</ul>
-	<ul class="nav navbar-nav navbar-right">
-		<li class="clas"> <%=link_to "Editar usuario",  edit_user_registration_path %></li>
-		<li class="clas"> <%=link_to "Salir", destroy_user_session_path, :method => :delete %></li>
-	</ul>
-</nav>
-<% else %>
-<nav class="navbar navbar-default">
-	<ul class="nav navbar-nav">
-		<li><%= link_to "Nosotros", about_path %></li>
-	</ul>
-	<ul class="nav navbar-nav navbar-right">
-		<li><%=link_to "Entrar", new_user_session_path %></li>
-		<li class="clas"> <%=link_to "Registrate", new_user_registration_path %></li>
-	</ul>
-</nav>
-<% end %>
+
+
+
+
 <h1 class="title">Movie Time</h1>
 
+
+
+
+
+
+
 <br/>
-<div class="2017">
-<h4 class="year">2017</h4>
-<div class="peliculas">
+<div class="row">
+	<div class="col-lg-4">
+			<div class="year">
+				<h4 class="number">2017</h4>
+				<% @peliculas.each do |peli| %>
+					<% if peli.year === 2017 %>
+						<div class="peliculas">
+							<h5 class="titulo"><%= link_to peli.name, peli %></h5>
+						</div>
+					<% end %>
+				<% end %>
+			</div>
+	</div>
 
-
-	<% @peliculas.each do |peli| %>
-	<h5 class="titulo"><%= link_to peli.name, peli %></h5>
-	<% end %>
-	<br/>
-</div>
-</div>
-<br/>
-<div class="2016">
-<h4 class="year">2016</h4>
-<div class="peliculas">
-
-
-	<% @peliculas.each do |peli| %>
-	<h5 class="titulo"><%= link_to peli.name, peli %></h5>
-	<% end %>
-	<br/>
-</div>
+	<div class="col-lg-6">
+			<div class="top-time">
+				<h4 class="top-time-title">Top Movies of All Times</h4>
+				<% @peliculas.each do |peli2| %>
+					<% if peli2.stars === 5 %>
+				<div class="peliculas">
+					<h5 class="titulo"><%= link_to peli2.name, peli2 %></h5>
+				</div>
+				<% end %>
+				<% end %>
+			</div>
+	</div>
 </div>
 

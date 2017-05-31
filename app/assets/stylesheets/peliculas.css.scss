@@ -56,8 +56,9 @@
 .title{
 	text-align: center;
 }
-.peliculas{
-	margin-right: 70%;
+.year{
+	margin-left: 8%;
+	margin-right: 20%;
 	a:link {
 		color: black;
     	text-decoration: none;
@@ -89,8 +90,12 @@
 .titulo{
 	background-color: #B0B0B0;
 	width: 80%;
-	margin-left: 2%;
+	padding-left: 5%;
 }
-.year{
+.number{
 	margin-left: 4%;
+}
+.head{
+	height: 30%;
+	background-color: blue;
 }
