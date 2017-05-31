@@ -17,18 +17,14 @@
 		</div>
 	</div>
 </div>
-
-
-
-
-
 <br/>
+<div class="container">
 <div class="row">
 	<div class="col-lg-4">
 			<div class="year">
-				<h4 class="number">2017</h4>
+				<h4 class="number">Lo mejor de 2017</h4>
 				<% @peliculas.each do |peli| %>
-					<% if peli.year === 2017 %>
+					<% if peli.year === 2017 && peli.stars === 5 %>
 						<div class="peliculas">
 							<h5 class="titulo"><%= link_to peli.name, peli %></h5>
 						</div>
@@ -50,4 +46,26 @@
 			</div>
 	</div>
 </div>
+<div class="row">
+	<div class="col-lg-4">
+		<div class="year">
+			<h4 class="number">Lo mejor de 2016</h4>
+				<% @peliculas.each do |peli3| %>
+					<% if peli3.year === 2016 && peli3.stars === 5 %>
+						<div class="peliculas">
+							<h5 class="titulo"><%= link_to peli3.name, peli3 %></h5>
+						</div>
+					<% end %>
+				<% end %>
+			</h4>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+
+
+
 
