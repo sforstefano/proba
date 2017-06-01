@@ -20,11 +20,11 @@
 </div>
 <div class="row visible-xs">
 	<% if user_signed_in? %>
-		<p class="xs"><%= link_to "Inicio", root_path %></p>
-		<p class="xs"><%=link_to "Salir", destroy_user_session_path, :method => :delete %></p>
+		<button class="xs"><%= link_to "Inicio", root_path %></button>
+		<button class="xs"><%=link_to "Salir", destroy_user_session_path, :method => :delete %></button>
 	<% else %>
 		<button class="xs"><%=link_to "Entrar", new_user_session_path %></button><br/>
-		<button class="xs"><%=link_to "Registrate", new_user_registration_path %></button><br/>
+		<button class="xs"><%= link_to "Inicio", root_path %></button>
 	<% end %>
 </div>
 <div class="container">
