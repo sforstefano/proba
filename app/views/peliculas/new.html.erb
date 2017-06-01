@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="stylesheet/peliculas.css.scss">
+<div class="hidden-xs">
 <%= form_for @pelicula, html: { multipart: true } do |futbol| %>
 <div class="row">
 		<p class="logg"><%= futbol.submit "Añadir" %></p>
@@ -33,4 +34,10 @@
 					<br/>
 		<% end %>
 	</div>
+</div>
+</div>
+<div class="col-xs-12 visible-xs">
+<p class="xsAviso">No disponible en versión mobil.</p>
+<br/>
+<button class="xs"><%=link_to "Volver a inicio", root_path %></button>
 </div>

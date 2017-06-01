@@ -148,3 +148,34 @@ input[type=submit] {
 .crear{
 	margin-left: 15%;
 }
+.xs{
+	text-align: center;
+	width: 100%;
+	padding-top: 5%;
+	padding-bottom: 5%;
+	background-color: 	#FFFFFF;
+	border: 1px solid black;
+	a:link {
+		color: black;
+    	text-decoration: none;
+	}
+
+	a:visited {
+		color: black;
+    	text-decoration: none;
+	}
+
+	a:hover {
+		color: black;
+    	text-decoration: none;
+	}
+
+	a:active {
+		color: black;
+    	text-decoration: none;
+	}
+}
+.xsAviso{
+	text-align: center;
+	font-size: 120%;
+}
