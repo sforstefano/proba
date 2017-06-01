@@ -1,8 +1,8 @@
 
   <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <div class="row hidden-xs">
-    <p class="logg"><%= link_to "Inicio", root_path %> </p>
     <p class="logg"><%= f.submit "Registrarse" %></p>
+    <p class="logg"><%= link_to "Inicio", root_path %> </p>
     <p class="logg"><%= link_to "Nosotros", about_path %></p>
   <div class="col-lg-12">
     <div class="head">
@@ -11,9 +11,9 @@
   </div>
 </div>
 <div class="visible-xs">
-    <p class="xs"><%= f.submit "Registrarse" %></p>
-    <p class="xs"><%= link_to "Inicio", root_path %> </p>
-    <p class="xs"><%= link_to "Nosotros", about_path %></p>
+    <button class="xs"><%= f.submit "Registrarse" %></button>
+    <button class="xs"><%= link_to "Inicio", root_path %> </button>
+    <button class="xs"><%= link_to "Nosotros", about_path %></button>
 </div>
 <div class="container">
   <h2>Registro</h2>

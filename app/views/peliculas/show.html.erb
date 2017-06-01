@@ -1,14 +1,14 @@
 <link rel="stylesheet" type="text/css" href="stylesheets/peliculas.css.scss">
 <div class="row hidden-xs">
 	<% if user_signed_in? %>
+		<p class="logg"> <%=link_to "Inicio", root_path %></p>
 		<p class="logg" ><%= link_to "Editar Pelicula", edit_pelicula_path %></p>
 		<p class="logg"><%= link_to 'Borrar pelicula', pelicula_path(@pelicula), :method => :delete %></p>
-		<p class="logg"> <%=link_to "Inicio", root_path %></p>
 				<p class="logg"> <%=link_to "Salir", destroy_user_session_path, :method => :delete %></p>
 	<% else %>
+		<p class="logg"> <%=link_to "Inicio", root_path %></p>
 		<p class="logg" ><%=link_to "Entrar", new_user_session_path %></p>
 		<p class="logg"><%=link_to "Registrate", new_user_registration_path %></p>
-		<p class="logg"><%= link_to "Nosotros", about_path %></p>
 	<% end %>
 	<div class="col-lg-12">
 		<div class="head">
@@ -23,8 +23,8 @@
 		<button class="xs"><%= link_to "Inicio", root_path %></button>
 		<button class="xs"><%=link_to "Salir", destroy_user_session_path, :method => :delete %></button>
 	<% else %>
-		<button class="xs"><%=link_to "Entrar", new_user_session_path %></button><br/>
 		<button class="xs"><%= link_to "Inicio", root_path %></button>
+		<button class="xs"><%=link_to "Entrar", new_user_session_path %></button><br/>
 	<% end %>
 </div>
 <div class="container">
