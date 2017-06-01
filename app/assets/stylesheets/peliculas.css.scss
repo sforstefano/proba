@@ -179,3 +179,61 @@ input[type=submit] {
 	text-align: center;
 	font-size: 120%;
 }
+footer{
+	text-align: center;
+	background-color: #E5E5E5;
+}
+.tw{
+	margin-left: 20%;
+	text-align: left;
+	float: left;
+
+	a:link {
+		color: black;
+    	text-decoration: none;
+	}
+
+	a:visited {
+		color: black;
+    	text-decoration: none;
+	}
+
+	a:hover {
+		color: black;
+    	text-decoration: none;
+	}
+
+	a:active {
+		color: black;
+    	text-decoration: none;
+	}
+
+}
+.ig{
+	text-align: left;
+	margin-left: 80%;
+
+	a:link {
+		color: black;
+    	text-decoration: none;
+	}
+
+	a:visited {
+		color: black;
+    	text-decoration: none;
+	}
+
+	a:hover {
+		color: black;
+    	text-decoration: none;
+	}
+
+	a:active {
+		color: black;
+    	text-decoration: none;
+	}
+}
+.discurso{
+	text-align: center;
+	text-indent: justify;
+}
