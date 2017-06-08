@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'settings/index'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 root :to => "peliculas#index"
@@ -12,7 +14,7 @@ get '/about' => 'statics#about', :as => 'about'
 resources :peliculas do
 	resources :comentarios
 end
-
+resources :settings
 
 
 

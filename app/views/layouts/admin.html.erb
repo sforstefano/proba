@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies</title>
+    <%= csrf_meta_tags %>
+    <link rel="stylesheet" type="text/css" href="stylesheet/peliculas.css.scss">
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <div class="row hidden-xs">
+        <p class="logg"><%=link_to "Inicio", root_path %></p>
+        <p class="logg"> <%=link_to "Salir", destroy_user_session_path, :method => :delete %></p>
+        <p class="logg"><%= link_to "Nosotros", about_path %></p>
+      <div class="col-lg-12">
+        <div class="head">
+          <img class="imagen img-responsive" src="http://res.cloudinary.com/se-or/image/upload/v1496246942/fondo_ua1eam.jpg">
+        </div>
+      </div>
+    </div>
+    <div class="row col -xs-12 visible-xs">
+          <button class="xs" ><%=link_to "Inicio", root_path %></button>
+          <button class="xs"><%=link_to "Salir", destroy_user_session_path, :method => :delete %></button>
+          <button class="xs"><%= link_to "Nosotros", about_path %></button>
+    </div>
+    <br/>
+    <%= yield %>
+
+    <br/>
+    <br/>
+    <br/>
+    <br/>
+   <footer>Created and designed by Stefano Cattoni with a lot of help.<br> Copyright sforstefano 2017
+   <br/><br/></footer>
+   <a href="https://twitter.com/sforstefano/"><p class="tw">Twitter<p></a><a href="https://www.instagram.com/sforstefano/"><p class="ig">Instagram</p></a>
+  </body>
+</html>
