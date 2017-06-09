@@ -1,9 +1,13 @@
-<div class="container">
-
-	<p><%= current_user.id  %></p> 
-	<p><%= current_user.email %></p>
-	<p><%= current_user.current_sign_in_at  %></p>
-	<p><%= current_user.sign_in_count %></p>
-	<p><%= current_user.created_at %></p>
-	
-</div>
+ <!-- COMPROBACIO DE SETTING SI NO ES NULL -->   	 
+ <%if !@setting.nil?%>
+ 
+   	 <p>Country&nbsp;<%= @setting.country %></p><br/><br/>
+   	 <p>Language&nbsp;<%= @setting.language %></p><br/><br/>
+ 
+      	<%= link_to ' Editar', edit_setting_path(@setting.id), :title => "Editar", class: 'btn btn-md btn-primary fa fa-1x fa-edit', style:"color: white;" %>
+       	<br></br>
+    
+ <%else%>
+ 
+   	<%= link_to 'Añadir', new_setting_path, title:"Añadir setting !!", class:"btn btn-md btn-danger fa fa-1x fa-address-book nodecor pull-right", style:"color:white;" %>
+ <%end%>

@@ -14,7 +14,9 @@ get '/about' => 'statics#about', :as => 'about'
 resources :peliculas do
 	resources :comentarios
 end
-resources :settings
+
+  resources :settings
+
 
 
 
