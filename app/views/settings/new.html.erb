@@ -3,9 +3,9 @@
         <div class="editar">
             <%= form_for(@setting) do |f| %>
                 <p>País</p>
-                <p><%= f.text_field :country, placeholder: "Country", class:"form-control" %></p>
+                <p><%= f.text_field :country, placeholder: "País", class:"form-control" %></p>
                 <br/>
-                <p><%= f.text_field :language, placeholder: "Language", class:"form-control" %></p>
+                <p><%= f.text_field :language, placeholder: "Idioma", class:"form-control" %></p>
                 <br/>
                 <p><%= f.submit "Guardar" %></p>
         	<% end %>

@@ -21,19 +21,19 @@
 				<br/>
 				<br/>
 					<p>Tiutulo</p>
-					<p><%= pelic.text_field :name  %></p>
+					<p><%= pelic.text_field :name, placeholder:"Título"  %></p>
 					<br/>
 					<p>Puntuación:</p>
-					<p><%= pelic.text_field :stars %></p>
+					<p><%= pelic.text_field :stars, placeholder: "Puntuación" %></p>
 					<br/>
 					<p>Actor principal</p>
-					<p><%= pelic.text_field :main_actor %></p>
+					<p><%= pelic.text_field :main_actor, placeholder: "Actor principal" %></p>
 					<br/>
 					<p>Año</p>
-					<p><%= pelic.text_field :year %></p>
+					<p><%= pelic.text_field :year, placeholder: "Año" %></p>
 					<br/>
 					<p>Sinposis</p>
-					<p><%= pelic.text_field :description %></p>
+					<p><%= pelic.text_field :description, placeholder: "Descripción" %></p>
 					<br/>
 					<p>Poster</p>
 					<p><%= pelic.file_field :poster %></p>
