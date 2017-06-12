@@ -1,5 +1,15 @@
-<%= form_for ([@pelicula, @pelicula.comentarios.build]) do |f| %>
-	<%= f.text_area :coment %>
-
-	<%= f.submit %>
+<!-- CREAR COMENTARIO -->
+<%= form_for([@pelicula, @pelicula.comentarios.build]) do |f| %>
+<p>
+<%= f.label :name %><br>
+<%= f.text_field :name %>
+</p>
+<p>
+<%= f.label :coment %><br>
+<%= f.text_area :coment, size: "80x4" %>
+</p>
+<p>
+<%= f.submit 'Guardar', class:"btn btn-xs btn-primary"%>
+</p>
+</div> <!-- end panel -->
 <% end %>
